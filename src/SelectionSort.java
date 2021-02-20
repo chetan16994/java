@@ -1,4 +1,7 @@
 public class SelectionSort {
+
+//  select min and keep and put it at first then iterate one less from start
+
     public int[] sort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int min_ind=i;
