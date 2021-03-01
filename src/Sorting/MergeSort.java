@@ -2,6 +2,7 @@ package Sorting;
 
 public class MergeSort {
 
+//    divide and conquer
 //     using rescursion
 //    keep breaking and then merge using merge function
 //     refer to screenshot in project folder
