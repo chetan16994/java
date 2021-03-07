@@ -10,10 +10,10 @@ public class InsertionLL {
             next=null;
         }
     }
-    static void push(int newdata){
-        Node newnode=new Node(newdata);
-        newnode.next=head;
-        head=newnode;
+    static void push(int newData){
+        Node newNode=new Node(newData);
+        newNode.next=head;
+        head=newNode;
     }
 
     static void append(int newdata1){

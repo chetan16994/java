@@ -1,3 +1,5 @@
+Understand the application and why a sort is good or bad and when to use it
+
 In my experience, from most to least commonly mentioned in interviews:
 1. quicksort: implement it, explain it
 2. mergesort: implement it, talk about space complexity as well as time complexity
