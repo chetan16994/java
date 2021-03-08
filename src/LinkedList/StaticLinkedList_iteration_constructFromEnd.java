@@ -1,13 +1,12 @@
 package LinkedList;
 
-public class StaticLinkedList_iteration_insertAtEnd {
+public class StaticLinkedList_iteration_constructFromEnd {
     
     static Node head=null;
 
     public static void printList(Node head){
         Node curr = head;
-        while (curr != null)
-        {
+        while (curr != null){
             System.out.print(curr.data + " —> ");
             curr = curr.next;
         }
