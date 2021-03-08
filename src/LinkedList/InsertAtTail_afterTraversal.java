@@ -26,7 +26,6 @@ public class InsertAtTail_afterTraversal {
                 curr = curr.next;
             curr.next = push(data, null);
         }
-        System.out.println(head.data);
         return head;
     }
     public static void main(String[] args) {
