@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class DeleteLinkedList {
+public class DeleteByKeyLinkedList {
     public static void printList(Node head){
         Node curr=head;
         while(curr!=null){
@@ -17,9 +17,8 @@ public class DeleteLinkedList {
 //        make the next node a new head and return
         if((int) curr.data==key) {
             System.out.println("found at head ");
-            Node newHead=curr.next;
-            System.out.println(curr.next.data);
-            return newHead;
+            head=curr.next;
+            return head;
         }
 
 //        condition 2: if between tail and head
@@ -28,7 +27,6 @@ public class DeleteLinkedList {
 //        now check why loop break in next if statement
 //        if found key then delete else not found
         while ((int)curr.next.data!=key && curr.next.next!=null){
-            System.out.println(curr.data);
             curr=curr.next;
         }
         if((int)curr.next.data==key)
@@ -44,7 +42,7 @@ public class DeleteLinkedList {
             head=new Node(arr[i],head);
         }
         printList(head);
-        Node newHead=deleteByKey(head,5);
+        Node newHead=deleteByKey(head,1);
         printList(newHead);
     }
 }
