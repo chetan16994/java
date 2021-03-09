@@ -45,7 +45,7 @@ public void sumNode(int[] keys){
     public static void main(String[] args) {
         SumLL l1=new SumLL();
         int[] keys = { 1, 2, 3, 4 };
-//        l1.constuctNode(keys);
+        l1.constuctNode(keys);
 //        l1.printLL();
         l1.sumNode(keys);
     }

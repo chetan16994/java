@@ -15,13 +15,13 @@ public class RearrangeLastToFirstNode {
         return newNode;
     }
 
-    public static Node constructList(int[] arr){
-        Node head=null;
-        for (int i = arr.length-1; i>=0  ; i--) {
-            head=push(arr[i], head);
-        }
-        return head;
-    }
+//    public static Node constructList(int[] arr){
+//        Node head=null;
+//        for (int i = arr.length-1; i>=0  ; i--) {
+//            head=push(arr[i], head);
+//        }
+//        return head;
+//    }
 
     public static Node rearrange(Node head){
         Node curr=head;
@@ -42,8 +42,13 @@ public class RearrangeLastToFirstNode {
         return newHead;
     }
     public static void main(String[] args) {
-        int[] arr={1};
-        Node head=constructList(arr);
+        int[] arr={1,2,3,4,5};
+//        Node head=constructList(arr);
+
+        Node head = null;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            head = new Node(arr[i], head);
+        }
         printList(head);
         Node newHead=rearrange(head);
         System.out.println("list after re arranging");
