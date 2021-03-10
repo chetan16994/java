@@ -33,7 +33,7 @@ public class DeleteByPositionLinkedList {
             head=new Node(arr[i],head);
         }
         printList(head);
-        Node newHead=deleteByPosition(head,6);
+        Node newHead=deleteByPosition(head,3);
         printList(newHead);
     }
 }
