@@ -21,7 +21,7 @@ public class MiddleLinkedList_slow_fast {
         System.out.println(slow.data);
     }
     public static void main(String[] args) {
-        int[] arr1={1,2,3,4,5,6};
+        int[] arr1={1,4,3,1,5};
         Node head1=null;
 
         for (int i = arr1.length-1; i >=0 ; i--) {

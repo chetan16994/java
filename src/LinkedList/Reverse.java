@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class MiddleLinkedList_counter {
+public class Reverse {
     public static void printList(Node head){
         Node curr=head;
         while(curr!=null){
@@ -9,26 +9,29 @@ public class MiddleLinkedList_counter {
         }
         System.out.println("null");
     }
-    public static Node middleCounter(Node head){
+    public static Node reverse(Node head){
         Node curr=head;
-        Node mid=head;
-        int counter=0;
+        Node prev=null;
+        Node next=null;
+
         while (curr!=null){
-            if((counter%2)==1){
-                mid=mid.next;
-            }
-            counter++;
-            curr=curr.next;
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
         }
-        return mid;
+        head=prev;
+        return(head);
     }
+
     public static void main(String[] args) {
-        int[] arr={1,2,3,4,6};
+        String[] arr={"a","b","c","d"};
         Node head=null;
         for (int i = arr.length-1; i >=0 ; i--) {
             head=new Node(arr[i],head);
         }
         printList(head);
-        System.out.println(middleCounter(head).data);
+        Node newHead=reverse(head);
+        printList(newHead);
     }
 }

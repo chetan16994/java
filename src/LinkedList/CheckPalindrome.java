@@ -1,6 +1,8 @@
 package LinkedList;
 
-public class MiddleLinkedList_counter {
+import java.util.HashSet;
+
+public class CheckPalindrome {
     public static void printList(Node head){
         Node curr=head;
         while(curr!=null){
@@ -9,26 +11,33 @@ public class MiddleLinkedList_counter {
         }
         System.out.println("null");
     }
-    public static Node middleCounter(Node head){
+
+    public static Boolean checkForPalindrome(Node head){
         Node curr=head;
-        Node mid=head;
-        int counter=0;
+        StringBuilder str=new StringBuilder();
         while (curr!=null){
-            if((counter%2)==1){
-                mid=mid.next;
-            }
-            counter++;
+            str.append(curr.data);
             curr=curr.next;
         }
-        return mid;
+        int i=0;
+        int len=str.length();
+        while (i<=(len/2)){
+            if (str.charAt(i)!=str.charAt(len-(i+1))){
+                return false;
+            }
+            i++;
+        }
+        return true;
     }
+
     public static void main(String[] args) {
-        int[] arr={1,2,3,4,6};
+        String[] arr={"a","b","b","a"};
         Node head=null;
+
         for (int i = arr.length-1; i >=0 ; i--) {
             head=new Node(arr[i],head);
         }
         printList(head);
-        System.out.println(middleCounter(head).data);
+        System.out.println(checkForPalindrome(head));
     }
 }
