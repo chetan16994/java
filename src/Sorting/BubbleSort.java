@@ -5,8 +5,9 @@ public class BubbleSort {
 //    heaviest go down and then one less iteration
     public int[] sort(int[] arr){
         int i,j,temp;
-        boolean swapped=false;
+        
         for (i = 0; i < arr.length-1; i++) {
+            boolean swapped = false;
             for (j = 0; j < arr.length-(i+1); j++) {
                 if(arr[j]>arr[j+1]){
                     temp=arr[j];
@@ -20,7 +21,8 @@ public class BubbleSort {
         return arr;
     }
     public static void main(String[] args) {
-        int [] arr={64, 34, 25, 12, 22, 11, 90};
+        // int [] arr={64, 34, 25, 12, 22, 11, 90};
+        int[] arr = { 1,2,3,4,5};
         BubbleSort obj=new BubbleSort();
         int[] arr1=obj.sort(arr);
         for (int i = 0; i < arr1.length; i++) {

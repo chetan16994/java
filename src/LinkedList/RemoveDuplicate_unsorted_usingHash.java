@@ -31,7 +31,7 @@ public class RemoveDuplicate_unsorted_usingHash {
     }
 
     public static void main(String[] args) {
-        int[] arr={4,1,5,2,1,5,7,2,3,4};
+        int[] arr={4,1,5,2,2,1,5,7,2,3,4};
         Node head=null;
 
         for (int i = arr.length-1; i >=0 ; i--) {

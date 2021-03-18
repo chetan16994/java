@@ -9,6 +9,10 @@ public class Node<T>{
         this.next=next;
     }
 
+    public Node() {
+
+    }
+
     public T getData(){
         return data;
     }

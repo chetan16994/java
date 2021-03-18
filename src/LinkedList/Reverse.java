@@ -18,6 +18,7 @@ public class Reverse {
             next=curr.next;
             curr.next=prev;
             prev=curr;
+            System.out.println(prev.data);
             curr=next;
         }
         head=prev;
