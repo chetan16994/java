@@ -42,8 +42,8 @@ public class QuickSort {
         System.out.println();
     }
     public static void main(String[] args) {
-        int [] arr={38,1,88,64,25,12,22,11,99};
-//        int [] arr={1,2,33,44};
+        int [] arr={7,6,10,5,9,2,1,15,7};
+//        int [] arr={1,2,3,4};
         QuickSort obj=new QuickSort();
         obj.quickSort(arr,0,arr.length-1);
         printArray(arr);

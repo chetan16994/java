@@ -1,0 +1,6 @@
+
+Appilcation of linked list
+
+https://www.geeksforgeeks.org/quicksort-on-singly-linked-list/
+https://www.geeksforgeeks.org/segregate-even-and-odd-elements-in-a-linked-list/
+https://www.geeksforgeeks.org/pairwise-swap-elements-of-a-given-linked-list/

@@ -13,6 +13,11 @@ public class SwapNode_without_swapping_data {
 
         System.out.println("interchange "+a+" and "+b);
 
+        if(a==b) {
+            System.out.println("both element same");
+            return head;
+        }
+
         Node curr=head;
         Node first=null;
         Node second=null;
@@ -39,6 +44,11 @@ public class SwapNode_without_swapping_data {
                 }
             }
             curr=curr.next;
+        }
+
+        if(found!=2){
+            System.out.println("element not found");
+            return head;
         }
 
         if(first!=second_prev) {
@@ -79,6 +89,6 @@ public class SwapNode_without_swapping_data {
             head1 = new Node(arr1[i], head1);
         }
         printList(head1);
-        printList(swap(head1,10,13));
+        printList(swap(head1,10,133));
     }
 }
