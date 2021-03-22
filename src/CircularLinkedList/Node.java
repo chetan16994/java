@@ -1,9 +1,9 @@
 package CircularLinkedList;
 
-class Node {
-    int data;
-    Node next;
-    public Node(int value){
+class Node<T> {
+    T data;
+    Node<T> next;
+    public Node(T value){
         this.data =value;
     }
 }

@@ -5,7 +5,19 @@ public class CircularLinkedList {
     public Node head = null;
     public Node tail = null;
 
-    public void addNode(int data){
+    public void addNodeAtFront(int data){
+        Node newNode=new Node(data);
+        if (head == null) {
+            head=newNode;
+            tail=newNode;
+        }else{
+            newNode.next = head;
+            head=newNode;
+        }
+        tail.next=head;
+    }
+
+    public void addNodeAtEnd(int data){
         Node newNode=new Node(data);
         if(head==null){
             head=newNode;
@@ -15,13 +27,38 @@ public class CircularLinkedList {
         tail=newNode;
         tail.next =head;
     }
+
+    public void addNodeAtPosition(int position, int data){
+        Node newNode=new Node(data);
+        Node curr=head;
+        int count=2;
+        if(position==1){
+            newNode.next=head;
+            head=newNode;
+            tail.next=head;
+            return;
+        }
+        else{
+            do{
+                if(position==count){
+                    newNode.next=curr.next;
+                    curr.next=newNode;
+                    break;
+                }
+                curr=curr.next;
+                count++;
+            }while (curr!=head);
+        }
+    }
+
     public void traverse(){
         Node currentNode=head;
         if(head!=null){
             do{
-                System.out.println(currentNode.data);
+                System.out.print(currentNode.data+" ");
                 currentNode=currentNode.next;
             }while (currentNode!=head);
+            System.out.println(" ");
         }
     }
 
@@ -30,7 +67,7 @@ public class CircularLinkedList {
 //        empty
         if(head==null)
             return;
-        if(head.data==data){
+        if((int)head.data==data){
 //            single node
             if(tail==head){
                 head=null;
@@ -42,7 +79,7 @@ public class CircularLinkedList {
             }
         }
         while (curr.next!=head){
-            if(curr.next.data==data){
+            if((int)curr.next.data==data){
                 curr.next=curr.next.next;
                 break;
             }
@@ -54,7 +91,7 @@ public class CircularLinkedList {
         if(head==null)
             return false;
         do{
-            if(curr.data==data){
+            if((int)curr.data==data){
                 System.out.println("data found : "+curr.data);
                 return true;
             }
@@ -66,15 +103,23 @@ public class CircularLinkedList {
 
     public static void main(String[] args) {
         CircularLinkedList cl=new CircularLinkedList();
-        cl.addNode(6);
-        cl.addNode(7);
-        cl.addNode(8);
-        cl.addNode(9);
-        cl.addNode(10);
+        System.out.println(" insertion at end");
+        cl.addNodeAtFront(6);
+        cl.traverse();
+        cl.addNodeAtFront(7);
+        cl.traverse();
+        cl.addNodeAtFront(8);
+        cl.traverse();
+        cl.addNodeAtFront(9);
+        cl.traverse();
+        cl.addNodeAtFront(10);
         cl.traverse();
         cl.deleteNode(10);
         System.out.println("final");
         cl.traverse();
         System.out.println(cl.containsNode(8));
+
+        cl.addNodeAtPosition(5,2);
+        cl.traverse();
     }
 }
