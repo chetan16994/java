@@ -61,7 +61,6 @@ public class SplitIntoTwoHalves {
 //        assign head of second list to next of middle/split point
 //        now find till the original list ends
         list2=slow.next;
-        System.out.println(list2.data);
         Node curr2=list2;
         do{
             curr2=curr2.next;

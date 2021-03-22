@@ -78,13 +78,20 @@ public class CircularLinkedList {
                 tail.next=head;
             }
         }
-        while (curr.next!=head){
+        do{
             if((int)curr.next.data==data){
                 curr.next=curr.next.next;
                 break;
             }
             curr=curr.next;
-        }
+        }while (curr.next!=head);
+//        while (curr.next!=head){
+//            if((int)curr.next.data==data){
+//                curr.next=curr.next.next;
+//                break;
+//            }
+//            curr=curr.next;
+//        }
     }
     public boolean containsNode(int data){
         Node curr=head;
@@ -114,12 +121,12 @@ public class CircularLinkedList {
         cl.traverse();
         cl.addNodeAtFront(10);
         cl.traverse();
-        cl.deleteNode(10);
+        cl.deleteNode(7);
         System.out.println("final");
         cl.traverse();
-        System.out.println(cl.containsNode(8));
-
-        cl.addNodeAtPosition(5,2);
-        cl.traverse();
+//        System.out.println(cl.containsNode(8));
+//
+//        cl.addNodeAtPosition(5,2);
+//        cl.traverse();
     }
 }
