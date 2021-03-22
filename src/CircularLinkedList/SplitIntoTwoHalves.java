@@ -51,23 +51,26 @@ public class SplitIntoTwoHalves {
 
 //       assign head of original List to first list
 //        now find the end of first list (middle point)
-//        assign next of first list back to the head
         list1=head;
         Node curr1=head;
         do{
             curr1=curr1.next;
         }while (curr1.data!=slow.data);
-        curr1.next=head;
+
 
 //        assign head of second list to next of middle/split point
 //        now find till the original list ends
-//        assign the next of second list to its new head (at start of second list)
         list2=slow.next;
+        System.out.println(list2.data);
         Node curr2=list2;
         do{
             curr2=curr2.next;
         }while (curr2.next!=head);
+
+//        assign the tail of second list to its new head (at start of second list)
         curr2.next=list2;
+//        assign tail of list1 to first head
+        curr1.next=head;
 
         traverse(list1);
         traverse(list2);
