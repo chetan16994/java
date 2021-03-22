@@ -30,6 +30,7 @@ public class ExchangeFirstAndLast {
     public static void exchange(){
         Node curr=head;
 
+//        if there are just two nodes
         if (curr.next.next==head){
             head=curr.next;
             tail=curr;
@@ -38,15 +39,14 @@ public class ExchangeFirstAndLast {
         do {
             curr=curr.next;
             if (curr.next.next==head){
-                Node temp2=curr.next;
-                curr.next.next=head.next;
-                curr.next=head;
-                head.next=temp2;
 
+                tail.next=head.next; // original tail's next points to orginal head's next
+                curr.next=head;      // second last node's next point to original head
+                head.next=tail;      // orginial head's next now points to tail to make it circular
 
+// now everything will work on using traverse but we need to set update head and tail
                 head=head.next;
                 tail=curr.next;
-
             }
         }while (curr!=head);
 //        System.out.println(curr.data);
