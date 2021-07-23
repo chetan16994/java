@@ -3,13 +3,20 @@ package graph;
 import java.util.ArrayList;
 
 public class GraphAdjacencyArrayList {
+    int vertex ;
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+    public GraphAdjacencyArrayList(int vertex){
+        this.vertex=vertex;
+        for (int i = 0; i < vertex; i++)
+            list.add(new ArrayList<Integer>());
+    }
 
-    static void addEdge(ArrayList<ArrayList<Integer>> list,int source, int destination){
+    void addEdge(int source, int destination){
         list.get(source).add(destination);
         list.get(destination).add(source);
     }
 
-    static void printGraph(ArrayList<ArrayList<Integer>> list){
+    void printGraph(){
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).size()>0){
                 System.out.println("Vertex "+i+" is connected to : ");
@@ -22,20 +29,15 @@ public class GraphAdjacencyArrayList {
     }
 
     public static void main(String[] args) {
-        int vertex = 5;
-        ArrayList<ArrayList<Integer>> list = new ArrayList<>(vertex);
-
-        for (int i = 0; i < vertex; i++)
-            list.add(new ArrayList<Integer>());
-
-        addEdge(list,0,1);
-        addEdge(list,0, 4);
-        addEdge(list,1, 2);
-        addEdge(list,1, 3);
-        addEdge(list,1, 4);
-        addEdge(list,2, 3);
-        addEdge(list,3, 4);
-        printGraph(list);
+        GraphAdjacencyArrayList graph=new GraphAdjacencyArrayList(5);
+        graph.addEdge(0,1);
+        graph.addEdge(0, 4);
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(1, 4);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
+        graph.printGraph();
     }
 }
 

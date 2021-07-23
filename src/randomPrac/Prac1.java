@@ -1,7 +1,16 @@
 package randomPrac;
 
+import java.util.List;
 import java.util.Scanner;
 
+class Node{
+    int data;
+    List<Node> children;
+    public Node(int data){
+        this.data=data;
+        this.children=null;
+    }
+}
 public class Prac1 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
